@@ -2,7 +2,7 @@
   "use strict";
 
   // define variables
-  events = [
+  var events = [
   {
     "date": "21 October 2020",
     "location": "Hong Kong Museum of Art",
