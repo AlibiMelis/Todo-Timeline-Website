@@ -1,5 +1,6 @@
 const auth = firebase.auth();
 var signedIn = false;
+const firebaseRef = firebase.database().ref('letters');
 
 auth.onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
@@ -15,6 +16,19 @@ auth.onAuthStateChanged(firebaseUser => {
 })
 
 const logout = document.getElementById('logout');
+const form = document.getElementsByTagName('form')[0];
 logout.addEventListener('click', function() {
     auth.signOut();
-})
+});
+
+const sendLetterButton = document.getElementById('send-letter');
+
+sendLetterButton.addEventListener('click', (e) => {
+    const letter = document.getElementById('message-text');
+    const key = firebaseRef.push().key;
+    firebaseRef.child(key).set({
+        content: letter.value,
+        date: new Date(),
+    });
+    form.reset();
+});
