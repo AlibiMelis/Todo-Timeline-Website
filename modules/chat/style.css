@@ -1,0 +1,14 @@
+body,
+html {
+    background: linear-gradient(60deg, #ffafbd 0%, #ffc3a0 100%);
+    height: 100%;
+}
+
+.message {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    color: white
+}

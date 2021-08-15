@@ -1,0 +1,93 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(60deg, #2b5876 0%, #4e4376 100%);
+}
+
+.wrapper {
+    height: 100vh;
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.typing-demo {
+    width: 77ch;
+    animation: typing 8s steps(77), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.message-container {
+    text-align: center;
+    height: 100vh;
+    padding: 0px 15%;
+    color: white;
+    display: grid;
+    align-content: center;
+    font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+}
+
+.message-container p,
+ol {
+    text-align: left;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.focus {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.btn {
+    position: fixed;
+    bottom: 5%;
+    left: 100px;
+    transform: translateX(-50%);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7em;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 11;
+}
+
+.btn_works {
+    right: 0px;
+    left: unset;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #1B1734;
+}

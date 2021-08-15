@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+    <link rel="icon" href="/Website/assets/love.png">
+    <link rel="stylesheet" href="/Website/modules/welcome/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="typing-demo">
+            Raushan! The purpose of this website is to make your quarantine fun! (scroll)
+        </div>
+    </div>
+    <div class="message-container">
+        <span class="title">Welcome</span>
+        <p>
+            Привет, Рошка! Примерно через неделю после твого отлета, ко мне пришла абстрактная мысль создать дополнительный и особенный способ коммуникации между нами пока ты будешь на карантине. Спустя еще одну неделю попыток представить, как бы это выглядело и
+            как бы я хотел эту идею реализовать, я сел за ноутбук. Тоскуя и думая о тебе, я решил создать страничку на которую ты бы могла заходить с любой точки мира и ощущать связь со мной. Я знаю, это так странно, ахахах. But I guess this is my love
+            and appreciation language, since <span class="focus">I am doing what I value for someone I value</span>. I hope you accept it.
+        </p>
+        <p>
+            Честно говоря, я прежде никогда не создавал законченные вебсайты, с которыми может взаимодействовать пользователь, поэтому, на деле все вышло не совсем так, как я себе это представлял, ведь сайт еще не закончен, ахаха. Однако, я считаю, что для меня это
+            было отличным способом попробовать себя в чем-то новом в своей сфере (я раньше занимался лишь мобильной разработкой). И прежде всего, спасибо тебе за эту возможность познать себя. Ты для меня словно муза для артиста. <span class="focus">Ты - генератор моих безумных
+            идей</span>. And I freaking love it.
+        </p>
+        <p>
+            Данный сайт находится в публичном доступе. Однако, на все страницы (включая эту) сможешь войти лишь ты. Ведь только у тебя на всем белом свете есть ключ... <span class="focus">Ключ к моему внутреннему миру</span>, к моему сердцу (ну и пароль
+            xD). Даже если кто-либо попытается напрямую перейти на эту страницу, его сразу же перенаправит на страницу с логином:) Я думаю, это была самая важная часть этого сайта, над которой я работал (все самое главное остается за кадром xD), потому,
+            что хотел сделать его особенным и недоступным никому, кроме тебя. Вся информация, которая будет на последующих страницах также хранится на базе данных, которой владею я.
+        </p>
+        <p>
+            I wish I didn't need to sleep (our motto, lmao)! Ибо, не смотря на то, что я старался уделять почти все свободное время этому сайту, я не успел его завершить до твоего приезда. Но, я все же представлю его тебе. Aaaand I will be waiting for my very first
+            customer feedback! Данный сайт состоит из:
+            <ol>
+                <li>Home page: Interactive to-do list with daily mandatory to-do items</li>
+                <li>Timeline: A page with our story. Some items there are not available. To get access to them you will need to finish you to-do daily!</li>
+                <li>Communication: I said I would be waiting for your reply, my princess, so here is your chance to send me a pigeon email</li>
+                <li>Timer: a distance between us</li>
+            </ol>
+        </p>
+        <p>
+            Without further ado, you are welcome to go in. Press "Skip" button.
+        </p>
+    </div>
+
+    <a href="/Website/modules/home/home.html" class="btn btn_works">Skip</a>
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBm6OStoJusl2p5P4Audsj8nQuLIMK0DbE",
+            authDomain: "website-190302.firebaseapp.com",
+            projectId: "website-190302",
+            databaseURL: "https://website-190302-default-rtdb.firebaseio.com/",
+            storageBucket: "website-190302.appspot.com",
+            messagingSenderId: "598987913134",
+            appId: "1:598987913134:web:731b252dd0c373f5f5ba3f",
+            measurementId: "G-DVKTEYP953"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth();
+        firebase.database();
+    </script>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="/Website/modules/welcome/script.js"></script>
+</body>
+
+</html>
