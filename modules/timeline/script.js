@@ -95,9 +95,9 @@
             const photoPath = 'timeline-photos/' + key + '.jpg';
             var event = {
                 key: key,
-                title: data.title || "",
+                title: data.title || "Title",
                 date: data.date || "",
-                description: data.description,
+                description: data.description || "I will add my memories later)",
                 memories: data.memories || "",
                 location: data.location || "",
                 open: data.open || false,
