@@ -60,7 +60,7 @@
         timelineRef.child(key).set({
             title: title,
             date: date,
-            description: description,
+            memories: description,
             location: location,
             open: true,
         });
