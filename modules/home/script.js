@@ -106,7 +106,7 @@ function checkIfSignedIn(auth) {
                 alert('Access Denied!');
             }
             console.log('not signed in');
-            location.href = '../../index.html';
+            location.href = '/Website/index.html';
         }
     });
 };
