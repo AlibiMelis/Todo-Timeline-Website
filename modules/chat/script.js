@@ -25,8 +25,10 @@ const sendLetterButton = document.getElementById('send-letter');
 
 sendLetterButton.addEventListener('click', (e) => {
     const letter = document.getElementById('message-text');
+    const receiver = document.getElementById('recipient-name');
     const key = firebaseRef.push().key;
     firebaseRef.child(key).set({
+        receiver: receiver.value,
         content: letter.value,
         date: new Date(),
     });
