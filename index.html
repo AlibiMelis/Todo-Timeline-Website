@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Index</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="loading-style.css">
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="loading-style.css">
 </head>
+
 <body>
 
-	<div class="login-box" id="login">
-	  <h2>Login</h2>
-	  <form>
-	    <div class="user-box">
-	      <input type="text" name="email" required="" id="email">
-	      <label>Email</label>
-	    </div>
-	    <div class="user-box">
-	      <input type="password" name="password" required="" id="password">
-	      <label>Password</label>
-	    </div>
-	    <a href="#" id="signIn">
-	      <span></span>
-	      <span></span>
-	      <span></span>
-	      <span></span>
-	      Let the journey begin
-	    </a>
-	  </form>
-	</div>
+    <div class="login-box" id="login">
+        <h2>Login</h2>
+        <form>
+            <div class="user-box">
+                <input type="text" name="email" required="" id="email">
+                <label>Email</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="key1" required="" id="key1">
+                <label>Keys</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="key2" required="" id="key2">
+                <label>&</label>
+            </div>
+            <a href="#" id="signIn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> Let the journey begin
+            </a>
+        </form>
+    </div>
 
-	<div id="load" class="hidden">
-	  <div>G</div>
-	  <div>N</div>
-	  <div>I</div>
-	  <div>D</div>
-	  <div>A</div>
-	  <div>O</div>
-	  <div>L</div>
-	</div>
+    <div id="load" class="hidden">
+        <div>G</div>
+        <div>N</div>
+        <div>I</div>
+        <div>D</div>
+        <div>A</div>
+        <div>O</div>
+        <div>L</div>
+    </div>
 
-	<!-- <input type="text" name="email" id="email" placeholder="email"> <br>
+    <!-- <input type="text" name="email" id="email" placeholder="email"> <br>
 	<input type="password" name="password" id="password" placeholder="Password"> <br>
 	<button id="signIn">Sign in</button> <br>
 	<button id="signUp">Sign up</button> <br>
 	<button id="logOut" class="hide">Log out</button> 
  -->
-	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
-	<script>
-	  var firebaseConfig = {
-	  	apiKey: "AIzaSyBm6OStoJusl2p5P4Audsj8nQuLIMK0DbE",
-	  	authDomain: "website-190302.firebaseapp.com",
-	  	projectId: "website-190302",
-	  	databaseURL: "https://website-190302-default-rtdb.firebaseio.com/",
-	  	storageBucket: "website-190302.appspot.com",
-	  	messagingSenderId: "598987913134",
-	  	appId: "1:598987913134:web:731b252dd0c373f5f5ba3f",
-	  	measurementId: "G-DVKTEYP953"
-	  };
-	  // Initialize Firebase
-	  firebase.initializeApp(firebaseConfig);
-	  firebase.auth();
-	</script>
-	<script type="text/javascript" src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBm6OStoJusl2p5P4Audsj8nQuLIMK0DbE",
+            authDomain: "website-190302.firebaseapp.com",
+            projectId: "website-190302",
+            databaseURL: "https://website-190302-default-rtdb.firebaseio.com/",
+            storageBucket: "website-190302.appspot.com",
+            messagingSenderId: "598987913134",
+            appId: "1:598987913134:web:731b252dd0c373f5f5ba3f",
+            measurementId: "G-DVKTEYP953"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth();
+    </script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>

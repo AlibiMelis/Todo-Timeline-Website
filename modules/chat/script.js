@@ -2,6 +2,8 @@ const auth = firebase.auth();
 var signedIn = false;
 const firebaseRef = firebase.database().ref('letters');
 
+const toast_container = document.getElementById('live-toast');
+
 auth.onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
         signedIn = true;
@@ -32,5 +34,11 @@ sendLetterButton.addEventListener('click', (e) => {
         content: letter.value,
         date: new Date(),
     });
+    triggerToastMessage();
     form.reset();
 });
+
+function triggerToastMessage(message) {
+    var toast = new bootstrap.Toast(toast_container);
+    toast.show();
+}
