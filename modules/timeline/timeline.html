@@ -1,53 +1,201 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Our story</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
+<!DOCTYPE html>
+<html>
 
-		<!-- Navigation bar -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Navbar</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our story</title>
+    <link rel="icon" href="../../assets/love.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="loading-style.css">
+</head>
+
+<body>
+
+    <div id="main">
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Rose</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="../home/home.html">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Timeline</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Pricing</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../home/home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="">Timeline</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../chat/chat.html">Chat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../timer/timer.html">Timer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-		<!-- Timeline -->
-		<!-- Welcoming section -->
-		<section class="intro">
-			<div class="container">
-				<h1>Vertical Timeline &darr;</h1>
-			</div>
-		</section>
+        <div id="load">
+            <div>G</div>
+            <div>N</div>
+            <div>I</div>
+            <div>D</div>
+            <div>A</div>
+            <div>O</div>
+            <div>L</div>
+        </div>
 
-		<!-- Timeline itself -->
-		<section class="timeline"><ul></ul></section>
+        <!-- Timeline -->
+        <!-- Welcoming section -->
+        <section class="intro">
+            <div class="container">
+                <h1>Our Story </h1>
+            </div>
+        </section>
+
+        <!-- Timeline itself -->
+        <section class="timeline">
+            <ul></ul>
+        </section>
 
 
-		<script src="script.js" type="text/javascript"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	</body>
-	</html>
+        <!-- Modal -->
+        <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventModalLabel">Event details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-6 event-image">
+                                    <img id='modal-image' class="fit-image">
+                                </div>
+                                <div class="col-6">
+                                    <div id="modal-texts">
+                                        <div id="modal-description-container">
+                                            <div id="modal-description"></div>
+                                        </div>
+                                        <!-- <div class="label">
+                                            What do you have in mind, sweetheart?
+                                        </div> -->
+                                        <!-- <div id="modal-textbox-container">
+                                            <form id="modal-form">
+                                                <textarea id="modal-textbox"></textarea>
+                                            </form>
+                                        </div> -->
+                                        <div class="mb-3 modal-textbox-container">
+                                            <!-- <label for="event-description" class="col-form-label">Memories:</label> -->
+                                            <textarea class="form-control" id="modal-textbox" placeholder="Your memories..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="save">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="newEventModal" tabindex="-1" aria-labelledby="newEventModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newEventModalLabel">Your memories are important to me</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="new-event-form">
+                            <div class="mb-3">
+                                <label for="event-title" class="col-form-label">Title:</label>
+                                <input type="text" class="form-control" id="event-title" autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-date" class="col-form-label">Date:</label>
+                                <input type="date" class="form-control" id="event-date">
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-location" class="col-form-label">Location:</label>
+                                <input type="text" class="form-control" id="event-location" autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-description" class="col-form-label">Memories:</label>
+                                <textarea class="form-control" id="event-description"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-image" class="col-form-label">Photo:</label>
+                                <input type="file" class="form-control" id="event-image"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="add-new-event">Add event card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast message -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="live-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">All in due time, honey</strong>
+                    <small>Soon</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="toast-message">
+                    You need to first finish all your tasks and await till due day.<span id="message"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-storage.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBm6OStoJusl2p5P4Audsj8nQuLIMK0DbE",
+            authDomain: "website-190302.firebaseapp.com",
+            projectId: "website-190302",
+            databaseURL: "https://website-190302-default-rtdb.firebaseio.com/",
+            storageBucket: "website-190302.appspot.com",
+            messagingSenderId: "598987913134",
+            appId: "1:598987913134:web:731b252dd0c373f5f5ba3f",
+            measurementId: "G-DVKTEYP953"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth();
+        firebase.database();
+        firebase.storage();
+    </script>
+
+    <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>

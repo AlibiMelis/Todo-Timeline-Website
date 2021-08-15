@@ -1,67 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="icon" href="../../assets/love.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Navbar</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div id="parent-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Rose</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../timeline/timeline.html">Timeline</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="logout">Log out</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-					</li>
-				</ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../timeline/timeline.html">Timeline</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../chat/chat.html">Chat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../timer/timer.html">Timer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logout">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="header">
+
+            <!--Content before waves-->
+            <div class="inner-header flex">
+                <div id="main-container">
+                    <!-- TO-DO LIST -->
+                    <div id="todo-container">
+                        <div id="clock">
+                        </div>
+                        <div id="header">
+                            <h1>What is your main focus today?</h1>
+                        </div>
+
+                        <div class="input-container">
+                            <form id="form-input-todo-item" autocomplete="off">
+                                <input type="text" name="todo_input" id="todo-input" placeholder="You can do it">
+                            </form>
+                        </div>
+
+
+                        <div id="tasks-container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Waves Container-->
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+				<defs>
+					<path id="gentle-wave"
+						d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+				</defs>
+				<g class="parallax">
+					<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+					<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+					<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+					<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+				</g>
+			</svg>
+            </div>
+            <!--Waves end-->
+
+
+            <template id="task-template">
+			<div class="task">
+				<input type="checkbox" />
+				<label class="task-name">
+					<span class="custom-checkbox"></span>
+				</label>
 			</div>
-		</div>
-	</nav>
+		</template>
+        </div>
+        <!--Header ends-->
+        <footer>
+            All rights reserved. Made with love.
+        </footer>
+    </div>
 
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Toast message -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="live-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">I have eyes everywhere</strong>
+                <small>I see you</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast-message">
+                I am smart enough to check if you are cheating :3.<span id="message"></span>
+            </div>
+        </div>
+    </div>
 
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-		https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
-  	<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
 
-	
-	
-	<script>
-	  // Your web app's Firebase configuration
-	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-	  var firebaseConfig = {
-	  	apiKey: "AIzaSyBm6OStoJusl2p5P4Audsj8nQuLIMK0DbE",
-	  	authDomain: "website-190302.firebaseapp.com",
-	  	projectId: "website-190302",
-	  	storageBucket: "website-190302.appspot.com",
-	  	messagingSenderId: "598987913134",
-	  	appId: "1:598987913134:web:731b252dd0c373f5f5ba3f",
-	  	measurementId: "G-DVKTEYP953"
-	  };
-	  // Initialize Firebase
-	  firebase.initializeApp(firebaseConfig);
-	  firebase.analytics();
-	  firebase.auth();
-	  firebase.firestore();
-	</script>
-	<script type="text/javascript" src="script.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBm6OStoJusl2p5P4Audsj8nQuLIMK0DbE",
+            authDomain: "website-190302.firebaseapp.com",
+            projectId: "website-190302",
+            databaseURL: "https://website-190302-default-rtdb.firebaseio.com/",
+            storageBucket: "website-190302.appspot.com",
+            messagingSenderId: "598987913134",
+            appId: "1:598987913134:web:731b252dd0c373f5f5ba3f",
+            measurementId: "G-DVKTEYP953"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth();
+        firebase.database();
+    </script>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
